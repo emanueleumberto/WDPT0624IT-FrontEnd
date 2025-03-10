@@ -1,0 +1,50 @@
+https://nodejs.org/en
+
+node -v
+npm -v
+
+Andiamo a creare una nuov app react tramite
+- Create-react-app -> https://create-react-app.dev/docs/getting-started/
+    npx create-react-app@latest my-app
+
+- Vite -> https://vite.dev/guide/
+    npm create vite@latest my-app -- --template react
+    cd my-app
+    npm install
+
+Principali differenze tra CRA e Vite
+- Velocità di avvio e sviluppo
+    CRA: Usa Webpack, che carica e transpila tutti i file in un unico bundle. 
+        Questo rende il primo avvio lento, soprattutto in progetti grandi.
+    Vite: Usa ES Modules e esbuild, un bundler scritto in Go, che è molto più veloce di Webpack. 
+        Avvia il server di sviluppo quasi istantaneamente.
+
+- Build per la produzione
+    CRA: Usa Webpack per generare il bundle, risultando più lento e meno ottimizzato.
+    Vite: Usa Rollup per la build, creando output più leggeri e ottimizzati.
+
+- Configurabilità
+    CRA: Ha una configurazione nascosta. Se vuoi modificarla, devi usare eject, 
+        che rende il progetto più complesso da gestire.
+    Vite: Ha una configurazione semplice tramite il file vite.config.js, che supporta alias, 
+        proxy, env variables senza bisogno di "eject".
+
+- Supporto TypeScript
+    CRA: Supporta TypeScript, ma richiede più configurazione e può rallentare il progetto.
+    Vite: Ha il supporto nativo per TypeScript, senza bisogno di configurazioni extra.
+
+- Gestione delle dipendenze
+    CRA: Installa automaticamente molte dipendenze di Webpack e Babel, aumentando il peso del progetto.
+    Vite: Ha meno dipendenze e utilizza ESBuild, che è più leggero.
+
+- Compatibilità con ecosistema React
+    CRA: Supporta bene React Router, Redux, Tailwind CSS, ma potrebbe richiedere configurazioni extra.
+    Vite: Supporta gli stessi strumenti, ma con una configurazione più semplice e veloce.
+
+Conclusione: quale scegliere?
+Se vuoi un ambiente moderno, veloce e leggero, usa Vite.
+Se hai un progetto esistente basato su Webpack o preferisci non gestire la configurazione, 
+CRA può andare bene, ma è ormai meno consigliato.
+
+Nel 2025, Vite è lo standard per le nuove app React, mentre CRA è considerato obsoleto 
+per nuovi progetti. 
