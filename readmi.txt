@@ -3,15 +3,6 @@ https://nodejs.org/en
 node -v
 npm -v
 
-Andiamo a creare una nuov app react tramite
-- Create-react-app -> https://create-react-app.dev/docs/getting-started/
-    npx create-react-app@latest my-app
-
-- Vite -> https://vite.dev/guide/
-    npm create vite@latest my-app -- --template react
-    cd my-app
-    npm install
-
 Principali differenze tra CRA e Vite
 - Velocità di avvio e sviluppo
     CRA: Usa Webpack, che carica e transpila tutti i file in un unico bundle. 
@@ -48,3 +39,17 @@ CRA può andare bene, ma è ormai meno consigliato.
 
 Nel 2025, Vite è lo standard per le nuove app React, mentre CRA è considerato obsoleto 
 per nuovi progetti. 
+
+
+Andiamo a creare una nuov app react tramite
+- Create-react-app -> https://create-react-app.dev/docs/getting-started/
+    npx create-react-app@latest my-app
+
+- Vite -> https://vite.dev/guide/
+    npm create vite@latest my-app -- --template react
+    cd my-app
+    npm install
+
+ctrl+c -> stop react
+
+npm install react-bootstrap bootstrap
