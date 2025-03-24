@@ -1,0 +1,9 @@
+[
+    {
+        "firstname": "John", 
+        "lastname": "Smith", 
+        "city": "London", 
+        "phone": "123", 
+        "email": "johnsmith@example.com"
+    }
+]

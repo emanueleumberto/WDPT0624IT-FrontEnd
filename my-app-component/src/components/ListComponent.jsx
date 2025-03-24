@@ -3,6 +3,8 @@ import { Button, ListGroup } from 'react-bootstrap';
 
 export default function ListComponent({users, remove}) {
 
+ 
+
   return (
     <ListGroup variant="flush">
       {users.map((u,i) => <ListGroup.Item key={i}>
