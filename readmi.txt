@@ -52,10 +52,12 @@ Andiamo a creare una nuov app react tramite
 
 ctrl+c -> stop react
 
-npm install react-bootstrap bootstrap
+rfc -> react functional component
+rcc -> react class component
+
+npm install react-bootstrap bootstrap 
 
 /* The following line can be included in your src/index.js or App.js file */
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-rfc -> react functional component
-rcc -> react class component
+npm install react-router-dom
