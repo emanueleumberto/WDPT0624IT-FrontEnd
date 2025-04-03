@@ -61,3 +61,34 @@ npm install react-bootstrap bootstrap
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 npm install react-router-dom
+
+// Test con Testing Library
+npm install --save-dev vitest @testing-library/react @testing-library/jest-dom
+
+Aprire il file vite.config.js e scrivere:
+            export default defineConfig({
+            plugins: [react()],
+            test: {
+                globals: true,
+                environment: 'jsdom',
+                setupFiles: './src/setupTests.js',
+            },
+            })
+Creare il file ./src/setupTests.js
+Dentro il file setupTests.js scrivere:
+        import '@testing-library/jest-dom';
+
+Nel package.json aggiornare gli script come segue:
+        "scripts": {
+            "dev": "vite",
+            "build": "vite build",
+            "lint": "eslint .",
+            "preview": "vite preview",
+            "test": "vitest"
+        }
+
+Creare un file ./src/App.test.jsx se si vuole testare il componente App
+Scrivere nel file il test da eseguire
+
+Per eseguire un test digitare:
+    npm test
