@@ -16,6 +16,8 @@ Mongoose -> https://mongoosejs.com/
 -> npm install cors
 -> npm install mongoose --save
 
+-> npm i express cors mongoose
+
 -> node nomefile.js -> Per avviare un progetto Node
 -> ctrl + c -> Per terminare un progetto Node
 
