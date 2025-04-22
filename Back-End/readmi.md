@@ -6,6 +6,7 @@ Cors -> https://expressjs.com/en/resources/middleware/cors.html
 MongoDB -> https://www.mongodb.com/
 MongoDB Compass -> https://www.mongodb.com/products/compass/
 Mongoose -> https://mongoosejs.com/
+DotEnv -> https://www.npmjs.com/package/dotenv
 
 
 
@@ -15,8 +16,9 @@ Mongoose -> https://mongoosejs.com/
 -> npm install express --save
 -> npm install cors
 -> npm install mongoose --save
+-> npm install dotenv --save
 
--> npm i express cors mongoose
+-> npm i express cors mongoose dotenv
 
 -> node nomefile.js -> Per avviare un progetto Node
 -> ctrl + c -> Per terminare un progetto Node
