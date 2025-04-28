@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Upload File tramite Multer: </h1>
+    <div>
+        <form id="formUpload">
+            <input type="file" name="uploaded_file" />
+            <button type="submit">Salva File</button>
+        </form>
+    </div>
+    <hr />
+
+    <h1>Upload File tramite CLoudinary: </h1>
+    <div>
+        <form id="formUploadCloud">
+            <input type="file" name="uploaded_file_cloud" />
+            <button type="submit">Salva File</button>
+        </form>
+    </div>
+    <hr />
+
+    <h1>Send Email: </h1>
+    <div>
+        <button id="sendEmail">Invia Email</button>
+    </div>
+    <hr />
+
+<script>
+    // Evento per il salvataggio del file sul server Node tramite Multer
+    document.querySelector("#formUpload")
+            .addEventListener('submit', (e) => {
+                e.preventDefault();
+                console.log(e.target[0].files[0])
+
+                let data = new FormData()
+                data.append('uploaded_file', e.target[0].files[0])
+
+                fetch("http://localhost:3001/upload", {
+                    method: 'POST',
+                    body: data
+                }).then(response => response.json())
+                .then(json => console.log(json))
+                .catch(err => console.error(err))
+    })
+
+    // Evento per il salvataggio del file sul cloud Cloudinary tramite Multer e Cloudinary
+    document.querySelector("#formUploadCloud")
+            .addEventListener('submit', (e) => {
+                e.preventDefault();
+                console.log(e.target[0].files[0])
+
+                let data = new FormData()
+                data.append('uploaded_file_cloud', e.target[0].files[0])
+
+                fetch("http://localhost:3001/upload-cloud", {
+                    method: 'POST',
+                    body: data
+                }).then(response => response.json())
+                .then(json => console.log(json))
+                .catch(err => console.error(err))
+    })
+
+    // Evento per invio email tramite sendGrid
+    document.querySelector('#sendEmail')
+            .addEventListener('click', (e) => {
+                fetch("http://localhost:3001/send-email")
+                    .then(response => response.json())
+                    .then(json => console.log(json))
+                    .catch(err => console.error(err))
+            })
+</script>
+
+
+</body>
+</html>
