@@ -13,7 +13,9 @@ Cloudinary -> https://github.com/cloudinary/cloudinary_npm
 Multer Storage Cloudinary -> https://www.npmjs.com/package/multer-storage-cloudinary
 Sendgrid -> https://sendgrid.com/
 Sendgrid -> https://www.twilio.com/docs/sendgrid/for-developers/sending-email/quickstart-nodejs
-
+Bcript -> https://www.npmjs.com/package/bcrypt
+JWT -> https://jwt.io/
+JsonWebToken -> https://www.npmjs.com/package/jsonwebtoken
 
 
 -> node -v
@@ -27,6 +29,8 @@ Sendgrid -> https://www.twilio.com/docs/sendgrid/for-developers/sending-email/qu
 -> npm install cloudinary ("cloudinary": "^1.37.0",)
 -> npm install multer-storage-cloudinary
 -> npm install --save @sendgrid/mail
+-> npm install bcrypt
+-> npm install jsonwebtoken
 
 -> npm i express cors mongoose dotenv
 
