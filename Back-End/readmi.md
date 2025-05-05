@@ -16,6 +16,9 @@ Sendgrid -> https://www.twilio.com/docs/sendgrid/for-developers/sending-email/qu
 Bcript -> https://www.npmjs.com/package/bcrypt
 JWT -> https://jwt.io/
 JsonWebToken -> https://www.npmjs.com/package/jsonwebtoken
+Passport -> https://www.passportjs.org/
+Passport-google-oauth20 -> https://www.passportjs.org/packages/passport-google-oauth20/
+Google Dashboard -> https://console.cloud.google.com/apis/dashboard
 
 
 -> node -v
@@ -31,6 +34,8 @@ JsonWebToken -> https://www.npmjs.com/package/jsonwebtoken
 -> npm install --save @sendgrid/mail
 -> npm install bcrypt
 -> npm install jsonwebtoken
+-> npm install passport
+-> npm install passport-google-oauth2
 
 -> npm i express cors mongoose dotenv
 
