@@ -94,15 +94,17 @@ router.post('/auth/login', async(req, res) => {
 // Google Auth Route 
 router.get('/auth/googlelogin', passport.authenticate("google", {scope: ["profile", "email"]}));
 
-router.get('/auth/callback', passport.authenticate("google", {session: false, failureRedirect: '/login'} ), (req, res, next) => {
-    try {
-        console.log('google callback')
-        res.redirect(`/?accessToken=${req.user.accessToken}`)
-    } catch (error) {
-        console.log(error)
-        next(error)
-    }
-})
+router.get('/auth/callback', 
+    passport.authenticate("google", {session: false, failureRedirect: '/login'} ), 
+    (req, res, next) => {
+        try {
+            // Successful authentication, redirect home.
+            res.redirect(`${process.env.AUTH_CALLBACK_URL}${req.user.accessToken}`)
+        } catch (error) {
+            console.log(error)
+            next(error)
+        }
+    })
 
 // Funzione Soluzione 2 creazione di un token
 const generateToken = (payload) => {

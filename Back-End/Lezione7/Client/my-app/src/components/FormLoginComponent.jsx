@@ -1,19 +1,46 @@
-import React from 'react'
-import Button from 'react-bootstrap/Button';
-import Form from 'react-bootstrap/Form';
+import axios from 'axios';
+import React, { useState } from 'react'
+import { Alert, Button, Form } from 'react-bootstrap'
+import { useNavigate } from 'react-router-dom'
 
 export default function FormLoginComponent() {
+
+  const [user, setUser] = useState({});
+  const [error, setError] = useState(null);
+  const navigate = useNavigate();
+
+  const formHandler = (e) => {
+     setUser({
+         ...user,
+         [e.target.name] : e.target.value
+     })
+  }
+
+  const formSubmitHandler = () => {
+    axios.post('http://localhost:3001/auth/login', user)
+        .then(response => {
+          setError(null);
+          localStorage.setItem('userLogin', response.data)
+          navigate('/users')
+        })
+        .catch(error => setError(error.response.data)) 
+ }
+
   return (
-    <Form>
-      <Form.Group className="mb-3" controlId="formBasicEmail">
-        <Form.Label>Username</Form.Label>
-        <Form.Control type="text" placeholder="Enter username" />
+    <Form className='my-5'>
+      <Form.Group className="mb-3" controlId="username">
+        <Form.Control type="text" name="username" placeholder="Enter username" onChange={formHandler} />
       </Form.Group>
-      <Form.Group className="mb-3" controlId="formBasicPassword">
-        <Form.Label>Password</Form.Label>
-        <Form.Control type="password" placeholder="Password" />
+      <Form.Group className="mb-3" controlId="password">
+        <Form.Control type="password" name="password" placeholder="Enter password" onChange={formHandler} />
       </Form.Group>
-      <Button variant="primary" type="submit">Login</Button>
+      <Form.Group className="mb-3" controlId="formBasicCheckbox">
+        <Button variant="dark" type="button" className='w-100' onClick={formSubmitHandler}>Login</Button>
+      </Form.Group>
+      { error ? <Alert variant={'danger'}> {error.message} </Alert> : '' }
+      <Form.Group className="mb-3" controlId="formBasicCheckbox">
+        <Button variant="primary" type="button" className='w-100' href='http://localhost:3001/auth/googleLogin'>Google Login</Button>
+      </Form.Group>
     </Form>
   )
 }
