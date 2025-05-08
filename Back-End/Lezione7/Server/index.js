@@ -9,8 +9,8 @@ const googleStrategy = require('./middlewares/OAuthMiddleware')
 
 // Imposto l'app express e definisco i dati della connessione
 const app = express();
-const port = 3001;
-const dbName = "Lezione6";
+const port = process.env.PORT || 3001;
+const dbName = process.env.DB_NAME;
 
 // Middlewares
 app.use(cors()); // middleware per la gestione del CORS

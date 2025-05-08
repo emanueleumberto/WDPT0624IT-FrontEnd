@@ -37,6 +37,8 @@ Google Dashboard -> https://console.cloud.google.com/apis/dashboard
 -> npm install passport
 -> npm install passport-google-oauth2
 
+-> npm install -g gitignore -> gitignore node
+
 -> npm i express cors mongoose dotenv
 
 -> node nomefile.js -> Per avviare un progetto Node
